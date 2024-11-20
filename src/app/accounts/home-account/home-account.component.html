@@ -1,5 +1,8 @@
-<app-add-account></app-add-account>
+<app-add-account (eventToHome)="addAccount($event)"></app-add-account>
 
 <ol class="list-group">
-  <app-item-account></app-item-account>
+  @for (acc of tabAccounts; track $index) {
+  <app-item-account [oneAccount]="acc"></app-item-account>
+
+  }
 </ol>

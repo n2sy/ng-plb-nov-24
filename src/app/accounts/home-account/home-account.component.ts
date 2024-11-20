@@ -16,4 +16,8 @@ export class HomeAccountComponent {
       status: 'active',
     },
   ];
+
+  addAccount(newAccount) {
+    this.tabAccounts.push(newAccount);
+  }
 }
