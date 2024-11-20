@@ -1,5 +1,15 @@
 <ol class="list-group">
-  <app-item></app-item>
-  <app-item></app-item>
-  <app-item></app-item>
+  <app-item
+    (candidateToListe)="sendCandidateToCv($event)"
+    [unCandidat]="allCandidates[0]"
+  ></app-item>
+  <app-item
+    (candidateToListe)="sendCandidateToCv($event)"
+    [unCandidat]="allCandidates[1]"
+  ></app-item>
+  <app-item
+    (candidateToListe)="sendCandidateToCv($event)"
+    git
+    [unCandidat]="allCandidates[2]"
+  ></app-item>
 </ol>
