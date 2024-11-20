@@ -14,7 +14,7 @@ export class CvComponent {
     new Candidat(3, 'lisa', 'simpson', 20, 'designer', 'lisa.png'),
   ];
 
-  recupererCandidat(cand) {
+  recupererCandidat(cand: Candidat) {
     this.selectedCandidate = cand;
   }
 }
