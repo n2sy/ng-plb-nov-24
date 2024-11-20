@@ -1,1 +1,10 @@
-<p>Je suis le first Component!</p>
+<h3>Je suis {{ prenom }} et j'habite à {{ ville }}</h3>
+
+<div [hidden]="cache" [style.backgroundColor]="color">Formation en Angular</div>
+
+<button (click)="traitement()">Click me</button>
+
+<input type="text" [(ngModel)]="ville" />
+<br /><br />
+
+<input #v type="text" [value]="ville" (input)="modifierVille(v.value)" />
