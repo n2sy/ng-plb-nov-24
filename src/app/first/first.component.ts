@@ -20,4 +20,9 @@ export class FirstComponent {
 
     this.ville = nouvelleVille;
   }
+
+  lireLettre(lettre) {
+    console.log(lettre);
+    this.prenom = lettre;
+  }
 }

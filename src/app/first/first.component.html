@@ -11,4 +11,4 @@
 
 <hr />
 
-<app-child [textColor]="color"></app-child>
+<app-child (msgToParent)="lireLettre($event)" [textColor]="color"></app-child>
