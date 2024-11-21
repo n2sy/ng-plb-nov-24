@@ -13,7 +13,7 @@ export class CustomDirDirective {
   @HostBinding('style.color') cl = 'black';
 
   constructor(private Elt: ElementRef) {
-    console.log(Elt);
+    //console.log(Elt);
   }
 
   @HostListener('mouseenter') mouseenter() {

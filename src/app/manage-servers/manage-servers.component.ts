@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GestionCandidatsService } from '../services/gestion-candidats.service';
 
 @Component({
   selector: 'app-manage-servers',
@@ -33,6 +34,8 @@ export class ManageServersComponent {
       status: 'stable',
     },
   ];
+
+  constructor(private candSer: GestionCandidatsService) {}
 
   affecterClass(st) {
     return {
