@@ -1,1 +1,18 @@
-<p>manage-servers works!</p>
+<ol class="list-group">
+  @for (serv of tabServers; track $index) {
+
+  <!-- <li
+    class="list-group-item"
+    [ngClass]="{
+      'list-group-item-success': serv.status == 'stable' ? true : false
+      'list-group-item-danger': serv.status == 'critical' ? true : false
+      'list-group-item-warning': serv.status == 'offline' ? true : false
+    }"
+  > -->
+  <li class="list-group-item" [ngClass]="affecterClass(serv.status)">
+    {{ serv.name }} | {{ serv.type }} | {{ serv.date_d }}
+    <span class="badge text-bg-secondary">{{ serv.status }} </span>
+  </li>
+
+  }
+</ol>
