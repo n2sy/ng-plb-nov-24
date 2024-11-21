@@ -10,7 +10,8 @@
     }"
   > -->
   <li class="list-group-item" [ngClass]="affecterClass(serv.status)">
-    {{ serv.name }} | {{ serv.type }} | {{ serv.date_d }}
+    {{ serv.name | short : 13 }} | {{ serv.type | uppercase }} |
+    {{ serv.date_d | date : "fullDate" | uppercase }}
     <span class="badge text-bg-secondary">{{ serv.status }} </span>
   </li>
 
