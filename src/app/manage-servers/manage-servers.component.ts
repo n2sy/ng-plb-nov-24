@@ -41,4 +41,13 @@ export class ManageServersComponent {
       'list-group-item-warning': st == 'offline',
     };
   }
+
+  onAddServer() {
+    this.tabServers.push({
+      name: 'NEW SERVER',
+      type: 'medium',
+      date_d: new Date(2022, 4, 3),
+      status: 'stable',
+    });
+  }
 }

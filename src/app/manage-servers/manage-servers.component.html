@@ -1,7 +1,7 @@
 <input [(ngModel)]="selectedStatus" type="text" class="form-control" />
-<br />git
+<br />
 <ol class="list-group">
-  @for (serv of tabServers; track $index) {
+  @for (serv of tabServers | filter:selectedStatus; track $index) {
 
   <!-- <li
     class="list-group-item"
@@ -19,3 +19,5 @@
 
   }
 </ol>
+
+<button class="btn btn-primary" (click)="onAddServer()">Add Server</button>
