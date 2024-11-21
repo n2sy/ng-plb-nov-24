@@ -17,11 +17,11 @@ export class GestionCandidatsService {
     return this.tabCandidats;
   }
 
-  addCandidate() {
-    this.tabCandidats.push(
-      new Candidat(3, 'NEW', 'CANDIDAT', 20, 'designer', 'lisa.png')
-    );
-  }
+  // addCandidate() {
+  //   this.tabCandidats.push(
+  //     new Candidat(3, 'NEW', 'CANDIDAT', 20, 'designer', 'lisa.png')
+  //   );
+  // }
 
   showInfos() {
     console.log('Je suis le service');

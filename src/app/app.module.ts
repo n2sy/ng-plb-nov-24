@@ -19,6 +19,7 @@ import { ShortPipe } from './pipes/short.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { NoAvatarPipe } from './pipes/no-avatar.pipe';
 import { RecruterComponent } from './recruter/recruter.component';
+import { TestService } from './services/test.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { RecruterComponent } from './recruter/recruter.component';
     RecruterComponent,
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [],
+  providers: [TestService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

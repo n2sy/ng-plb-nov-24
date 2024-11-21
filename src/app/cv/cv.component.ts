@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { Candidat } from '../models/candidat';
 import { GestionCandidatsService } from '../services/gestion-candidats.service';
+import { GestionRecruesService } from '../services/gestion-recrues.service';
 
 @Component({
   selector: 'app-cv',
   templateUrl: './cv.component.html',
   styleUrl: './cv.component.css',
-  providers: [],
+  providers: [GestionRecruesService],
 })
 export class CvComponent {
   selectedCandidate: Candidat;
@@ -27,9 +28,9 @@ export class CvComponent {
     this.tabCandidats = this.candSer.getAllCandidates();
   }
 
-  onAddCandidate() {
-    this.candSer.addCandidate();
-  }
+  // onAddCandidate() {
+  //   this.candSer.addCandidate();
+  // }
 
   showCandidats() {
     console.log(this.candSer.getAllCandidates());
