@@ -1,0 +1,16 @@
+<h3>Formation en Angular avec PLB</h3>
+
+<hr />
+
+<h5>Navigation côté HTML :</h5>
+<button class="btn btn-primary" routerLink="cv">Go To CV</button>
+
+<button class="btn btn-danger" [routerLink]="['accounts']">
+  Go To Accounts
+</button>
+
+<hr />
+<h5>Navigation côté TS :</h5>
+<button (click)="goToMsWord()" class="btn btn-warning">Go To Ms-Word</button>
+
+<button (click)="goToCv()" class="btn btn-info">Go To CV</button>

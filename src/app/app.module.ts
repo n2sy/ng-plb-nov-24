@@ -20,6 +20,8 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { NoAvatarPipe } from './pipes/no-avatar.pipe';
 import { RecruterComponent } from './recruter/recruter.component';
 import { TestService } from './services/test.service';
+import { AccueilComponent } from './accueil/accueil.component';
+import { PLB_ROUTING } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -40,8 +42,9 @@ import { TestService } from './services/test.service';
     FilterPipe,
     NoAvatarPipe,
     RecruterComponent,
+    AccueilComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, PLB_ROUTING],
   providers: [TestService],
   bootstrap: [AppComponent],
 })
