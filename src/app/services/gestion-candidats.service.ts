@@ -17,14 +17,35 @@ export class GestionCandidatsService {
     return this.tabCandidats;
   }
 
-  // addCandidate() {
-  //   this.tabCandidats.push(
-  //     new Candidat(3, 'NEW', 'CANDIDAT', 20, 'designer', 'lisa.png')
-  //   );
-  // }
+  addCandidate(newCand) {
+    newCand.id = this.tabCandidats[this.tabCandidats.length - 1].id + 1;
+    this.tabCandidats.push(newCand);
+
+    // Version en OO
+    // let generatedId = this.tabCandidats[this.tabCandidats.length - 1].id + 1;
+    // let c = new Candidat(
+    //   generatedId,
+    //   newCand.prenom,
+    //   newCand.nom,
+    //   newCand.age,
+    //   newCand.profession,
+    //   newCand.avatar
+    // );
+    // this.tabCandidats.push(c);
+  }
 
   showInfos() {
     console.log('Je suis le service');
+  }
+
+  updateCandidat(cand) {
+    let i = this.tabCandidats.findIndex((c) => c.id == cand.id);
+    this.tabCandidats[i] = cand;
+  }
+
+  deleteCandidat(id) {
+    let i = this.tabCandidats.findIndex((c) => c.id == id);
+    this.tabCandidats.splice(i, 1);
   }
 
   getCandidatById(candidatId) {
