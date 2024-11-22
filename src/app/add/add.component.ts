@@ -13,8 +13,24 @@ export class AddComponent {
     private router: Router
   ) {}
 
-  onAdd(fValue) {
-    this.candSer.addCandidate(fValue);
-    this.router.navigateByUrl('/cv');
+  onAdd(fValue, e) {
+    console.log(e.target[4].files[0]);
+    let formData = new FormData();
+    formData.append('avatar', e.target[4].files[0]);
+    this.candSer.uploadAvatar(formData).subscribe({
+      next: (response) => {
+        //console.log(response);
+        fValue.avatar = response['fileName'];
+        this.candSer.addCandidateAPI(fValue).subscribe({
+          next: (response) => {
+            alert(response['message']);
+            this.router.navigateByUrl('/cv');
+          },
+        });
+      },
+    });
+
+    // this.candSer.addCandidate(fValue);
+    // this.router.navigateByUrl('/cv');
   }
 }

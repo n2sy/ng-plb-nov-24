@@ -19,11 +19,22 @@ export class EditComponent {
   ngOnInit() {
     let id = this.activatedRoute.snapshot.paramMap.get('id');
 
-    this.candAEditer = this.candSer.getCandidatById(id);
+    this.candSer.getCandidatByIdAPI(id).subscribe({
+      next: (response: Candidat) => {
+        this.candAEditer = response;
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
 
   onUpdate() {
-    this.candSer.updateCandidat(this.candAEditer);
-    this.router.navigateByUrl('/cv');
+    this.candSer.updateCandidatAPI(this.candAEditer).subscribe({
+      next: (response) => {
+        alert(response['message']);
+        this.router.navigateByUrl('/cv');
+      },
+    });
   }
 }

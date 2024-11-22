@@ -7,7 +7,7 @@
             width="150px"
             height="150px"
             class="rounded-circle align-content-center"
-            [src]="cand.avatar | noAvatar"
+            [src]="cand?.avatar | noAvatar"
             alt=""
           />
         </div>
@@ -20,20 +20,20 @@
             <table class="table table-hover table-striped">
               <tbody>
                 <tr>
-                  <td><strong>Prénom</strong> {{ cand.prenom }}</td>
+                  <td><strong>Prénom</strong> {{ cand?.prenom }}</td>
                 </tr>
                 <tr>
-                  <td><strong>Nom</strong> {{ cand.nom }}</td>
+                  <td><strong>Nom</strong> {{ cand?.nom }}</td>
                 </tr>
                 <tr>
-                  <td><strong>Age</strong>{{ cand.age }}</td>
+                  <td><strong>Age</strong> {{ cand?.age }}</td>
                 </tr>
 
                 <tr>
-                  <td><strong>Profession</strong> {{ cand.profession }}</td>
+                  <td><strong>Profession</strong> {{ cand?.profession }}</td>
                 </tr>
                 <tr>
-                  <td><strong>Image</strong> {{ cand.avatar }}</td>
+                  <td><strong>Image</strong> {{ cand?.avatar }}</td>
                 </tr>
               </tbody>
             </table>

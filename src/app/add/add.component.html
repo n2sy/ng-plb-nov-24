@@ -1,5 +1,5 @@
 <div class="container">
-  <form #f="ngForm" (ngSubmit)="onAdd(f.value)">
+  <form #f="ngForm" (ngSubmit)="onAdd(f.value, $event)">
     <label for="prenom">Prénom</label>
     <input
       required
@@ -33,7 +33,7 @@
     />
 
     <label for="path">Url de l'avatar</label>
-    <input ngModel type="text" class="form-control" id="path" name="avatar" />
+    <input type="file" class="form-control" id="path" name="avatar" />
 
     <button [disabled]="f.invalid" type="submit" class="btn btn-primary">
       Ajouter CV
