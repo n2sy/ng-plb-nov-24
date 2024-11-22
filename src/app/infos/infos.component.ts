@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { GestionCandidatsService } from '../services/gestion-candidats.service';
+import { Candidat } from '../models/candidat';
 
 @Component({
   selector: 'app-infos',
@@ -7,7 +9,11 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   styleUrl: './infos.component.css',
 })
 export class InfosComponent {
-  constructor(private activatedRoute: ActivatedRoute) {}
+  cand: Candidat;
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private candSer: GestionCandidatsService
+  ) {}
 
   ngOnInit() {
     //1ere méthode
@@ -17,7 +23,7 @@ export class InfosComponent {
     //2eme methode
     this.activatedRoute.paramMap.subscribe({
       next: (p: ParamMap) => {
-        console.log(p.get('id'));
+        this.cand = this.candSer.getCandidatById(p.get('id'));
       },
       error: (err) => {
         console.log(err);

@@ -26,4 +26,8 @@ export class GestionCandidatsService {
   showInfos() {
     console.log('Je suis le service');
   }
+
+  getCandidatById(candidatId) {
+    return this.tabCandidats.find((c) => c.id == candidatId);
+  }
 }
