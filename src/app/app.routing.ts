@@ -8,6 +8,7 @@ import { AddComponent } from './add/add.component';
 import { EditComponent } from './edit/edit.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
+import { ReactFormComponent } from './react-form/react-form.component';
 
 const myRoutes: Routes = [
   //   { path: '', component: AccueilComponent },
@@ -47,6 +48,7 @@ const myRoutes: Routes = [
     ],
   },
   { path: 'ms-word', component: MsWordComponent },
+  { path: 'react', component: ReactFormComponent },
   { path: 'login', component: LoginComponent },
   {
     path: 'servers',
