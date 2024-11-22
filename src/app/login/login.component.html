@@ -1,11 +1,15 @@
-<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+@if(showErrorMsg) {
+<div class="alert alert-danger">Login et/ou mot de passe invalide(s)</div>
+
+}
+<form #f="ngForm">
   <label for="login">Login</label>
   <input
     #inpLogin="ngModel"
     ngModel
     required
     email
-    name="login"
+    name="email"
     id="login"
     class="form-control"
   />
@@ -18,7 +22,7 @@
   <label for="">Mot de passe</label>
   <input required minlength="4" ngModel name="password" class="form-control" />
 
-  <div ngModelGroup="infos" #divInfos="ngModelGroup">
+  <!-- <div ngModelGroup="infos" #divInfos="ngModelGroup">
     <label for="">Langage préféré</label>
     <select
       #lang="ngModel"
@@ -67,15 +71,35 @@
   } @if(exp.errors['pattern']) {
   <div class="alert alert-danger">Le pattern est 'nidhal'</div>
 
-  } }
+  } } -->
+  <br /><br />
+  <div class="row">
+    <div class="col-6 offset-4">
+      @if(showLogin) {
+      <button (click)="onLogin(f)" type="submit" class="btn btn-primary">
+        Se connecter
+      </button>
+      <button (click)="toggleShowLogin()" type="button" class="btn btn-warning">
+        Switch to Register
+      </button>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
-  <button type="button" (click)="generatedPwd(f)" class="btn btn-warning">
+      } @else {
+      <button (click)="onRegister(f)" type="submit" class="btn btn-danger">
+        S'inscrire
+      </button>
+      <button (click)="toggleShowLogin()" type="button" class="btn btn-dark">
+        Switch to Login
+      </button>
+
+      }
+    </div>
+  </div>
+  <!-- <button type="button" (click)="generatedPwd(f)" class="btn btn-warning">
     Geenrated Password
   </button>
   <button type="button" (click)="onReset(f)" class="btn btn-danger">
     Reset
-  </button>
+  </button> -->
 
   <pre>
     {{ f.value | json }}

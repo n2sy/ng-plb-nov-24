@@ -17,6 +17,7 @@
       >Cv</a
     >
   </li>
+  @if(authSer.estConnecte()) {
   <li class="nav-item">
     <a
       class="nav-item nav-link"
@@ -26,6 +27,8 @@
       >Ajouter Cv</a
     >
   </li>
+
+  }
   <li class="nav-item">
     <a class="nav-item nav-link" routerLink="accounts" routerLinkActive="active"
       >Accounts</a
@@ -41,9 +44,16 @@
       >Ms-Word</a
     >
   </li>
+  @if(!authSer.estConnecte()) {
   <li class="nav-item">
     <a class="nav-item nav-link" routerLink="login" routerLinkActive="active"
       >Login</a
     >
   </li>
+  } @else {
+  <li class="nav-item">
+    <a class="nav-item nav-link" (click)="authSer.seDeconnecter()">Logout</a>
+  </li>
+
+  }
 </ul>

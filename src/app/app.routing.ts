@@ -9,6 +9,8 @@ import { EditComponent } from './edit/edit.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
 import { ReactFormComponent } from './react-form/react-form.component';
+import { allowGuard } from './allow.guard';
+import { denyGuard } from './deny.guard';
 
 const myRoutes: Routes = [
   //   { path: '', component: AccueilComponent },
@@ -37,19 +39,19 @@ const myRoutes: Routes = [
     path: 'cv',
     children: [
       { path: '', component: CvComponent },
-      { path: 'add', component: AddComponent },
+      { path: 'add', component: AddComponent, canActivate: [allowGuard] },
       {
         path: ':id',
         children: [
           { path: '', component: InfosComponent },
-          { path: 'edit', component: EditComponent },
+          { path: 'edit', component: EditComponent, canActivate: [allowGuard] },
         ],
       },
     ],
   },
   { path: 'ms-word', component: MsWordComponent },
   { path: 'react', component: ReactFormComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, canActivate: [denyGuard] },
   {
     path: 'servers',
     loadChildren: () => import('./sub/sub.module').then((m) => m.SubModule),

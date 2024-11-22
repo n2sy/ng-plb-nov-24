@@ -29,7 +29,8 @@ import { EditComponent } from './edit/edit.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
 import { ReactFormComponent } from './react-form/react-form.component';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { addTokenInterceptor } from './add-token.interceptor';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,10 @@ import { provideHttpClient } from '@angular/common/http';
     ReactFormComponent,
   ],
   imports: [BrowserModule, FormsModule, PLB_ROUTING, ReactiveFormsModule],
-  providers: [TestService, provideHttpClient()],
+  providers: [
+    TestService,
+    provideHttpClient(withInterceptors([addTokenInterceptor])),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
