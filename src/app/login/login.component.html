@@ -1,11 +1,11 @@
-<form #f="ngForm">
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
   <label for="login">Login</label>
   <input
     #inpLogin="ngModel"
     ngModel
     required
     email
-    name="plb"
+    name="login"
     id="login"
     class="form-control"
   />
@@ -18,24 +18,63 @@
   <label for="">Mot de passe</label>
   <input required minlength="4" ngModel name="password" class="form-control" />
 
-  <label for="">Langage préféré</label>
-  <select
-    #lang="ngModel"
-    name="lanagage"
-    [ngModel]="defaultLangagePrefere"
+  <div ngModelGroup="infos" #divInfos="ngModelGroup">
+    <label for="">Langage préféré</label>
+    <select
+      #lang="ngModel"
+      name="langage"
+      [ngModel]="defaultLangagePrefere"
+      class="form-control"
+    >
+      <option value=""></option>
+      <option value="java">Java</option>
+      <option value="javascript">Javascript</option>
+      <option value="php">Php</option>
+    </select>
+
+    defaultLangagePrefere : {{ defaultLangagePrefere }}
+    <br />
+
+    <label for="">Commentaire</label>
+    <textarea
+      class="form-control"
+      [(ngModel)]="defaultComment"
+      name="commentaire"
+      cols="5"
+      rows="4"
+    ></textarea>
+
+    defaultComment : {{ defaultComment }}
+    <br />
+  </div>
+
+  <label for="">Exemple de gestion d'erreurs</label>
+  <input
+    #exp="ngModel"
+    ngModel
+    name="exemple"
+    required
+    minlength="5"
+    pattern="nidhal"
+    type="text"
     class="form-control"
-  >
-    <option value=""></option>
-    <option value="java">Java</option>
-    <option value="javascript">Javascript</option>
-    <option value="php">Php</option>
-  </select>
+  />
+  @if (exp.invalid) { @if(exp.errors['required']) {
+  <div class="alert alert-danger">Ce champ est obligatoire</div>
 
-  {{ defaultLangagePrefere }}
-  <br />
+  } @if(exp.errors['minlength']) {
+  <div class="alert alert-danger">Le nombre minimum de caractères est 5</div>
+  } @if(exp.errors['pattern']) {
+  <div class="alert alert-danger">Le pattern est 'nidhal'</div>
 
-  <button (click)="onSubmit(f)" type="submit" class="btn btn-primary">
-    Submit
+  } }
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="button" (click)="generatedPwd(f)" class="btn btn-warning">
+    Geenrated Password
+  </button>
+  <button type="button" (click)="onReset(f)" class="btn btn-danger">
+    Reset
   </button>
 
   <pre>
