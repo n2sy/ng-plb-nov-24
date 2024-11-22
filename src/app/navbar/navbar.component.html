@@ -1,61 +1,49 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-primary">
-  <a class="navbar-brand">PLB</a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarNavAltMarkup"
-    aria-controls="navbarNavAltMarkup"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a
-        class="nav-item nav-link"
-        routerLink=""
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Accueil</a
-      >
-      <a
-        class="nav-item nav-link"
-        routerLink="cv"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Cv</a
-      >
-      <a
-        class="nav-item nav-link"
-        routerLink="cv/add"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Ajouter Cv</a
-      >
-
-      <a
-        class="nav-item nav-link"
-        routerLink="accounts"
-        routerLinkActive="active"
-        >Accounts</a
-      >
-      <a
-        class="nav-item nav-link"
-        routerLink="servers"
-        routerLinkActive="active"
-        >Servers</a
-      >
-      <a
-        class="nav-item nav-link"
-        routerLink="ms-word"
-        routerLinkActive="active"
-        >Ms-Word</a
-      >
-      <a class="nav-item nav-link" routerLink="login" routerLinkActive="active"
-        >Login</a
-      >
-    </div>
-  </div>
-</nav>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a
+      class="nav-item nav-link"
+      routerLink=""
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Accueil</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-item nav-link"
+      routerLink="cv"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Cv</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-item nav-link"
+      routerLink="cv/add"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Ajouter Cv</a
+    >
+  </li>
+  <li class="nav-item">
+    <a class="nav-item nav-link" routerLink="accounts" routerLinkActive="active"
+      >Accounts</a
+    >
+  </li>
+  <li class="nav-item">
+    <a class="nav-item nav-link" routerLink="servers" routerLinkActive="active"
+      >Servers</a
+    >
+  </li>
+  <li class="nav-item">
+    <a class="nav-item nav-link" routerLink="ms-word" routerLinkActive="active"
+      >Ms-Word</a
+    >
+  </li>
+  <li class="nav-item">
+    <a class="nav-item nav-link" routerLink="login" routerLinkActive="active"
+      >Login</a
+    >
+  </li>
+</ul>
